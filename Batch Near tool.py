@@ -24,4 +24,3 @@ for n in range(0,190): #若有190条线
     infc = path_stop[n]
     line = path_line[n]
     arcpy.Near_analysis(infc, line, "", "true") #生成线上距离最近的点（原点shp文件属性表增加字段"NEAR_X", "NEAR_Y"）
-    arcpy.MakeXYEventLayer_management(infc, "NEAR_X", "NEAR_Y") #根据"NEAR_X", "NEAR_Y"生成XY事件图层，后续导出为点shp文件
