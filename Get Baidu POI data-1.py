@@ -5,8 +5,7 @@
 
 #代码开始
 import requests
-
-f = open(r'D:\江宁公交站.txt', 'a')  #设置数据保存位置
+f = open(r'H:\江宁公交站.txt', 'a')  #设置数据保存位置
 
 baidu = 'http://api.map.baidu.com/place/v2/search?output=json&page_size=20&coord_type=1'
 ak = '***'   #申请的密钥 http://lbsyun.baidu.com/apiconsole/key/create  
@@ -34,5 +33,6 @@ def get_poi(r, p):  #获取并保存每页中每项数据的名称、纬度、�
             print(bus)
             f.write(bus + '\n') 
 
-for p in range(0, get_page_num(region)):
-    get_poi(region, p)
+if __name__ == '__main__':
+    for p in range(0, get_page_num(region)):
+        get_poi(region, p)
