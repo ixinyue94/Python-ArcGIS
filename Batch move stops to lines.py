@@ -2,6 +2,7 @@
 # 按字段批量导出各线至单独的shp文件
 # 按字段批量导出各线的点至单独的shp文件
 # 该方法将改掉原文件，请注意备份
+# Python版本-ArcGIS自带
 
 import arcpy
 import os.path
