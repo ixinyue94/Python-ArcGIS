@@ -134,11 +134,11 @@ if __name__ == '__main__':
     for i in range(len(f)):
         lng = f.at[i,'x']
         lat = f.at[i,'y']
-        result1 = gcj02_to_bd09(lng, lat)
-        result2 = bd09_to_gcj02(lng, lat)
-        result3 = wgs84_to_gcj02(lng, lat)
-        result4 = gcj02_to_wgs84(lng, lat)
-        result5 = bd09_to_wgs84(lng, lat)
-        result6 = wgs84_to_bd09(lng, lat)
+        result1 = gcj02_to_bd09(lng, lat)   #输入为国测局坐标，输出为百度坐标
+        result2 = bd09_to_gcj02(lng, lat)   #输入为百度坐标，输出为国测局坐标
+        result3 = wgs84_to_gcj02(lng, lat)  #输入为wgs84坐标，输出为国测局坐标
+        result4 = gcj02_to_wgs84(lng, lat)  #输入为国测局坐标，输出为wgs84坐标
+        result5 = bd09_to_wgs84(lng, lat)   #输入为百度坐标，输出为wgs84坐标
+        result6 = wgs84_to_bd09(lng, lat)   #输入为wgs84坐标，输出为百度坐标
         
         print (result1, result2, result3, result4, result5, result6)
