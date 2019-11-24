@@ -130,7 +130,7 @@ def out_of_china(lng, lat):
 
 
 if __name__ == '__main__':
-    f = pd.read_excel('***.xls',sheetname='***') #输入数据的位置，其中保证经度的列名为x，纬度的列名为y
+    f = pd.read_excel('***.xls',sheetname='***') #原始坐标数据的位置，其中保证经度的列名为x，纬度的列名为y
     for i in range(len(f)):
         lng = f.at[i,'x'] 
         lat = f.at[i,'y']
