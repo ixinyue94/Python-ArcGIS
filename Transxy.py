@@ -130,10 +130,11 @@ def out_of_china(lng, lat):
 
 
 if __name__ == '__main__':
-    f = pd.read_excel('***.xls',sheetname='***')
+    f = pd.read_excel('***.xls',sheetname='***') #输入数据的位置，其中保证经度的列名为x，纬度的列名为y
     for i in range(len(f)):
-        lng = f.at[i,'x']
+        lng = f.at[i,'x'] 
         lat = f.at[i,'y']
+        #以下选择需要的类型即可
         result1 = gcj02_to_bd09(lng, lat)   #输入为国测局坐标，输出为百度坐标
         result2 = bd09_to_gcj02(lng, lat)   #输入为百度坐标，输出为国测局坐标
         result3 = wgs84_to_gcj02(lng, lat)  #输入为wgs84坐标，输出为国测局坐标
@@ -141,4 +142,4 @@ if __name__ == '__main__':
         result5 = bd09_to_wgs84(lng, lat)   #输入为百度坐标，输出为wgs84坐标
         result6 = wgs84_to_bd09(lng, lat)   #输入为wgs84坐标，输出为百度坐标
         
-        print (result1, result2, result3, result4, result5, result6)
+        print (result1, result2, result3, result4, result5, result6) #选择需要的类型即可
