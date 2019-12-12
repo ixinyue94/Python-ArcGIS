@@ -131,7 +131,7 @@ def out_of_china(lng, lat):
 
 
 if __name__ == '__main__':
-    f = open('***.json', encoding='utf-8') #从ArcGIS导出的json文件位置
+    f = open('***.json', encoding='utf-8') # 从ArcGIS导出的json文件位置
     data = json.load(f)
     for i in range(len(data['features'])):
         feature = data['features'][i]
@@ -140,14 +140,14 @@ if __name__ == '__main__':
             xy = path[k]
             lng = xy[0]
             lat = xy[1]
-            #以下选择需要的类型即可
-            result1 = gcj02_to_bd09(lng, lat)   #输入为国测局坐标，输出为百度坐标
-            result2 = bd09_to_gcj02(lng, lat)   #输入为百度坐标，输出为国测局坐标
-            result3 = wgs84_to_gcj02(lng, lat)  #输入为wgs84坐标，输出为国测局坐标
-            result4 = gcj02_to_wgs84(lng, lat)  #输入为国测局坐标，输出为wgs84坐标
-            result5 = bd09_to_wgs84(lng, lat)   #输入为百度坐标，输出为wgs84坐标
-            result6 = wgs84_to_bd09(lng, lat)   #输入为wgs84坐标，输出为百度坐标
-            #如需要result5，则
+#             以下选择需要的类型即可
+#             result1 = gcj02_to_bd09(lng, lat)   # 输入为国测局坐标，输出为百度坐标
+#             result2 = bd09_to_gcj02(lng, lat)   # 输入为百度坐标，输出为国测局坐标
+#             result3 = wgs84_to_gcj02(lng, lat)  # 输入为wgs84坐标，输出为国测局坐标
+#             result4 = gcj02_to_wgs84(lng, lat)  # 输入为国测局坐标，输出为wgs84坐标
+#             result5 = bd09_to_wgs84(lng, lat)   # 输入为百度坐标，输出为wgs84坐标
+#             result6 = wgs84_to_bd09(lng, lat)   # 输入为wgs84坐标，输出为百度坐标
+#             如需要result5，则
             xy[0] = result5[0]
             xy[1] = result5[1]
                 
