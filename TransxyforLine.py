@@ -135,23 +135,21 @@ if __name__ == '__main__':
     data = json.load(f)
     for i in range(len(data['features'])):
         feature = data['features'][i]
-        paths = feature['geometry']['paths']
-        for j in range(len(paths)):
-            path = paths[j]
-            for k in range(len(path)):
-                xy = path[k]
-                lng = xy[0]
-                lat = xy[1]
-                #以下选择需要的类型即可
-                result1 = gcj02_to_bd09(lng, lat)   #输入为国测局坐标，输出为百度坐标
-                result2 = bd09_to_gcj02(lng, lat)   #输入为百度坐标，输出为国测局坐标
-                result3 = wgs84_to_gcj02(lng, lat)  #输入为wgs84坐标，输出为国测局坐标
-                result4 = gcj02_to_wgs84(lng, lat)  #输入为国测局坐标，输出为wgs84坐标
-                result5 = bd09_to_wgs84(lng, lat)   #输入为百度坐标，输出为wgs84坐标
-                result6 = wgs84_to_bd09(lng, lat)   #输入为wgs84坐标，输出为百度坐标
-                #如需要result5，则
-                xy[0] = result5[0]
-                xy[1] = result5[1]
+        path = feature['geometry']['paths'][0]
+        for k in range(len(path)):
+            xy = path[k]
+            lng = xy[0]
+            lat = xy[1]
+            #以下选择需要的类型即可
+            result1 = gcj02_to_bd09(lng, lat)   #输入为国测局坐标，输出为百度坐标
+            result2 = bd09_to_gcj02(lng, lat)   #输入为百度坐标，输出为国测局坐标
+            result3 = wgs84_to_gcj02(lng, lat)  #输入为wgs84坐标，输出为国测局坐标
+            result4 = gcj02_to_wgs84(lng, lat)  #输入为国测局坐标，输出为wgs84坐标
+            result5 = bd09_to_wgs84(lng, lat)   #输入为百度坐标，输出为wgs84坐标
+            result6 = wgs84_to_bd09(lng, lat)   #输入为wgs84坐标，输出为百度坐标
+            #如需要result5，则
+            xy[0] = result5[0]
+            xy[1] = result5[1]
                 
     fp = open('***.json',mode='w') #设置保存转换后的json文件位置
     json.dump(data, indent=4, fp=fp, ensure_ascii=False)
