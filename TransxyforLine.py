@@ -151,5 +151,5 @@ if __name__ == '__main__':
             xy[0] = result5[0]
             xy[1] = result5[1]
                 
-    fp = open('***.json',mode='w') # 设置保存转换后的json文件位置
+    fp = open('***.json', encoding='utf-8',mode='w') # 设置保存转换后的json文件位置
     json.dump(data, indent=4, fp=fp, ensure_ascii=False)
