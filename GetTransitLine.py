@@ -24,7 +24,7 @@ fields = ['SHAPE@', 'name','startTime','endTime','num', 'company']
 
 array = arcpy.Array()
 cur = da.InsertCursor(shp_output, fields)
-with open(r'***.txt', "r") as f:    # 设置html返回数据转换坐标系后的数据存储路径
+with open(r'***.txt', "r") as f:    # 设置html返回数据转换坐标系后的数据存储路径，参考示例-new.txt文件格式
     for line in f.readlines():
         line = line.strip('\n').split(';')
         name = line[0]
