@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Python版本-ArcGIS自带
 
 import arcpy
 from arcpy import  da
